@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./navbar.css"
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from '../CartWidget/CartWidget';
+import { Link } from 'react-router-dom';
 
 function NavBar({links}) {
 
@@ -22,7 +23,6 @@ function NavBar({links}) {
                         <Nav.Link href="#Accesorios">Accesorios</Nav.Link>
                         <Nav.Link href="#Contacto">Contacto</Nav.Link>
                     </Nav>
-
                     <CartWidget/>
                 </Container>
             </Navbar>

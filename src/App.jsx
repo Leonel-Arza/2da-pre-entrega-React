@@ -1,28 +1,29 @@
-import { useState } from 'react'
+import { useState, useEffect} from 'react'
 import './App.css'
 import NavBar from './components/Navbar/Navbar'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from './components/ItemListContaner/ItemListContainer';
-
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import{BrowserRouter, Routes, Route} from "react-router-dom"
+import Footer from './components/Footer/Footer'
+import Error from './components/Error/Error'
 
 function App() {  
 
-  const enlaces = [
-    "Home",
-    "Motos",
-    "Scooters",
-    "Bicicletas",
-    "Autos",
-    "Accesorios",
-    "Contacto"
-  ]
-
-  const welcome = "Bienvenidos/as a mi sitio E-Commerce"
-
+  
   return (
+    
     <>
-    <NavBar links={enlaces}/>
-    <ItemListContainer welcome={welcome}/>
+  <NavBar/>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<ItemListContainer/>}/>
+        <Route path='/:categoryId' element={<ItemListContainer/>}/>
+        <Route path='/item/:idProduct' element={<ItemDetailContainer/>}/>
+        <Route path='*' element={<Error/>}/>
+      </Routes>
+    </BrowserRouter>
+    <Footer/>
     </>
   )
 }
