@@ -3,7 +3,7 @@ import React from 'react';
 const Error = () => {
     return (
         <div>
-            <h1>ERROR WEB</h1>
+            <h1>NOT FOUND</h1>
         </div>
     );
 };

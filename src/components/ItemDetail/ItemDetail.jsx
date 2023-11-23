@@ -9,8 +9,8 @@ const ItemDetail = ({producto}) => {
     
     return (
         <div>
-            <img src={producto.img} alt={producto.nombre}/>
-            <h2>{producto.nombre}</h2>
+            <img src={producto.img} alt={producto.name}/>
+            <h2>{producto.name}</h2>
             <p>Stock: {producto.stock}</p>
             <p>Precio: {producto.price}</p>
             <p>Categoria: {producto.category}</p>

@@ -7,13 +7,11 @@ const Item = ({product}) => {
     return (
         <>
         <div className='contenedor'>
-            {/* <link to={`/item/${product.id}`}> */}
+            <Link to={`/item/${product.id}`}>
                 <h1>{product.name}</h1>
-            {/* </link> */}
+            </Link>
             <img src={product.img} alt={product.name}/>
-
         </div>
-
         </>
     );
 };

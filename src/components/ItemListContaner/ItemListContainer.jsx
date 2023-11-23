@@ -9,26 +9,24 @@ const ItemListContainer = () => {
     const {categoryId} = useParams()
 
     useEffect(()=>{
-        const promiseData = () => {
-            return new Promise ((resolve) => {
-                setTimeout(()=> {
+        const fetchData = () => {
+            return fetch("/productos.js")
+                .then((response) => response.json())
+                .then((data) => {
+                    if (categoryId) {
+                        const filterProducts = data.filter(p => p.category === categoryId)
+                        setProducts(filterProducts)
+                    } else {
+                        setProducts(data)
+                    }
 
-                    const productosFile = "/productos.js"
-
-                    fetch(productosFile)
-                    .then((response)=>response.json())
-                    .then((data)=>{
-                        resolve(data)
-                    })
-
-                },2000)
-            })
+                })
+                .catch((error) => console.log(error))
         }
-        promiseData().then((data) =>{
-            setProducts(data)
-        })
 
-    },[])
+        fetchData()
+
+    }, [categoryId])
 
     return (
         <>

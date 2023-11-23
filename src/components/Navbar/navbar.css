@@ -3,3 +3,12 @@
     background-color: lightgrey;
     padding: 1rem;
 }
+
+.nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: aquamarine;
+    text-decoration-line: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
